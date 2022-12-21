@@ -21,6 +21,9 @@ pattern = re.compile("([A-Z][a-z]+\s)(?P<middle_name>[A-Z][a-z]*[ ])*(?P<last_na
 get_pattern = pattern.finditer(data)
 # print(get_pattern)
 
+# I wanted to only access people who had both middle names and last names,
+# and print out the middle names and last names by calling them
+
 for name in get_pattern:
     if name.group("middle_name"):
         print(name.group("middle_name"),name.group("last_name"))
